@@ -10,6 +10,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import HelloComponent from './HelloComponent'
 import LifecircleComponent from './LifecircleComponent'
+import PropsTest from './PropsTest'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -20,34 +21,23 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
-  constructor(props) { //初始化组件
-    super(props); //初始化Component
-    console.log("APP的constructor")
-    this.state={
-      remove:false
-    }
-  }
-  render() {
-    var view=this.state.remove?null:<LifecircleComponent/>
-    var text=this.state.remove?"让他复活":"干掉他"
+  render() { 
+    var params={name="小张",age:18,sex:"男"}
+    var {name,sex}=params //解构赋值
     return (
       <View style={styles.container}>
-        {/* <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text> */}
-        {/* <HelloComponent 
-        name="小明"
-        /> */}
-        {/* <LifecircleComponent/> */}
-        <Text
-          style={{fontSize:60}}
-          onPress={()=>{
-            this.setState({
-              remove:!this.state.remove
-            })
-          }}
-          >{text}</Text>
-        {view}
+        <PropsTest 
+          // name={params.name}
+          // age={params.age}
+          // sex={params.sex}
+
+
+          // {...params}  //延展操作符
+
+          name={name}
+          sex={sex}
+        >
+        </PropsTest>
       </View>
     );
   }
