@@ -20,7 +20,16 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+  constructor(props) { //初始化组件
+    super(props); //初始化Component
+    console.log("APP的constructor")
+    this.state={
+      remove:false
+    }
+  }
   render() {
+    var view=this.state.remove?null:<LifecircleComponent/>
+    var text=this.state.remove?"让他复活":"干掉他"
     return (
       <View style={styles.container}>
         {/* <Text style={styles.welcome}>Welcome to React Native!</Text>
@@ -29,7 +38,16 @@ export default class App extends Component<Props> {
         {/* <HelloComponent 
         name="小明"
         /> */}
-        <LifecircleComponent/>
+        {/* <LifecircleComponent/> */}
+        <Text
+          style={{fontSize:60}}
+          onPress={()=>{
+            this.setState({
+              remove:!this.state.remove
+            })
+          }}
+          >{text}</Text>
+        {view}
       </View>
     );
   }

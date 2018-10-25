@@ -16,6 +16,9 @@ export default class LifecircleComponent extends Component{
   constructor(props) { //初始化组件
     super(props); //初始化Component
     console.log("constructor")
+    this.state={
+      count:0
+    }
   }
   componentWillMount() {
     console.log("componentWillMount")
@@ -53,7 +56,17 @@ export default class LifecircleComponent extends Component{
 
 
   render() {
-    return <Text style={{fontSize:40,backgroundColor:'red',color:'#fff'}}>hello{this.props.name}</Text>
+    console.log("render")
+    return <View> 
+      <Text 
+        style={{fontSize:40,backgroundColor:'red',color:'#fff'}}
+        onPress={()=>{
+          this.setState({
+            count:this.state.count+1
+          })
+        }}
+        >你点了{this.state.count}次hello</Text>
+    </View> 
   }
 }
 
