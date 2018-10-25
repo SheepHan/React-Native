@@ -11,6 +11,8 @@ import {StyleSheet, Text, View} from 'react-native';
 
 
 export default class LifecircleComponent extends Component{
+
+  //Mounting 只调用一次
   constructor(props) { //初始化组件
     super(props); //初始化Component
     console.log("constructor")
@@ -23,6 +25,9 @@ export default class LifecircleComponent extends Component{
     console.log("componentDidMount")
   }
 
+
+
+//Updating  会调用多次
   componentWillReceiveProps(nextProps) {
     console.log("componentWillReceiveProps")
   }
@@ -40,6 +45,8 @@ export default class LifecircleComponent extends Component{
     console.log("componentDidUpdate")
   }
 
+
+  //Unmounting 只调用一次
   componentWillUnmount() {
     console.log("componentWillUnmount")
   }
