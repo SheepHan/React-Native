@@ -11,6 +11,7 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import HelloComponent from './HelloComponent'
 import LifecircleComponent from './LifecircleComponent'
 import StateTest from './StateTest'
+import RefTest from './RefTest'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -21,11 +22,34 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+  constructor(props){
+    super(props);
+    this.state={
+      size:0
+    }
+  }
+  getSize() {
+    return this.state.size;
+  }
   render() { 
     return (
       <View style={styles.container}>
-        <StateTest>
-        </StateTest>
+          <Text 
+          style={{fontSize:40,color:'#000'}}
+          onPress={()=>{
+            // var size=this.refs.reftest.getSize()
+            var size=this.reftest.getSize()
+            this.setState({
+              size:size
+            })
+          }}>
+          点击查看实时大小{this.state.size}
+          </Text>
+          <RefTest  
+            // ref="reftest"
+            ref={reftest=>this.reftest=reftest}
+            >
+          </RefTest>
       </View>
     );
   }

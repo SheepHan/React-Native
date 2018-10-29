@@ -11,29 +11,26 @@ import {StyleSheet, Text, Image, View} from 'react-native';
 
 
 
-
-export default class StateTest extends Component{
-  // state 的定义两种方式之一
+export default class RefTest extends Component{
   state={
     size:30
   }
+  getSize(){
+    return this.state.size;
+  }
   constructor(props){
     super(props);
-    // state 的定义两种方式之二
-    // this.state={
-    //   name:"大明"
-    // }
   }
   render() {
     return <View>
-      <Text style={{fontSize:40,backgroundColor:'red',color:'#fff'}} 
+      <Text style={{fontSize:40,color:'#000'}} 
         onPress={()=>{
           this.setState({
             size:this.state.size+10
           })
         }}
       >点击变大</Text>
-       <Text style={{fontSize:40,backgroundColor:'red',color:'#fff'}} 
+       <Text style={{fontSize:40,color:'#000'}} 
         onPress={()=>{
           this.setState({
             size:this.state.size-10
