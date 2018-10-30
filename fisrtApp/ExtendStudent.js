@@ -6,7 +6,6 @@ export default class ExtendStudent extends ClassStudent {
     // super.getInfo()
   }
   getInfo(){
-    return  "daming"+super.getInfo
-  }
-  
+    return  "daming"+super.getInfo();
+  } 
 }

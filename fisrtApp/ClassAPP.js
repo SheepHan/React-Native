@@ -10,8 +10,10 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import HelloComponent from './HelloComponent'
 import LifecircleComponent from './LifecircleComponent'
-import FlexBox from './FlexBoxTest'
-import TouchtableTest from './TouchtableTest'
+import StateTest from './StateTest'
+import RefTest from './RefTest'
+import ClassStudent from './ClassStudent'
+import ExtendStudent from './ExtendStudent'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -22,10 +24,20 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+  constructor(props){
+    super(props);
+    this.state={
+    }
+    this.stu=new ExtendStudent()
+  }
+ 
   render() { 
     return (
-      <View>
-        <TouchtableTest></TouchtableTest>
+      <View style={styles.container}>
+        <Text style={{fontSize:20,color:'red'}}>
+         该生的信息是{this.stu.getInfo()}
+        </Text>
+        <Text></Text>
       </View>
     );
   }
