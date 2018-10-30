@@ -12,8 +12,6 @@ import HelloComponent from './HelloComponent'
 import LifecircleComponent from './LifecircleComponent'
 import StateTest from './StateTest'
 import RefTest from './RefTest'
-import ClassStudent from './ClassStudent'
-import ExtendStudent from './ExtendStudent'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -27,16 +25,32 @@ export default class App extends Component<Props> {
   constructor(props){
     super(props);
     this.state={
+      size:20
     }
-    this.stu=new ExtendStudent()
   }
- 
+  getSize() {
+    return this.state.size;
+  }
   render() { 
     return (
       <View style={styles.container}>
-        <Text style={{fontSize:20,color:'red'}}>
-         该生的信息是{this.stu.getInfo()}
-        </Text>
+          <Text 
+          style={{fontSize:40,color:'#000'}}
+          onPress={()=>{
+            var size=this.refs.reftest.getSize()
+            console.log(this.refs)
+            // var size=this.reftest.getSize()
+            this.setState({
+              size:size
+            })
+          }}>
+          点击查看实时大小{this.state.size}
+          </Text>
+          <RefTest
+            ref="reftest"
+            // ref={reftest=>this.reftest=reftest}
+            >
+          </RefTest>
       </View>
     );
   }
