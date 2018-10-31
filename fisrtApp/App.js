@@ -11,7 +11,7 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import HelloComponent from './HelloComponent'
 import LifecircleComponent from './LifecircleComponent'
 import FlexBox from './FlexBoxTest'
-import TouchtableTest from './TouchtableTest'
+import Touchable from './TouchableTest'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -25,7 +25,7 @@ export default class App extends Component<Props> {
   render() { 
     return (
       <View>
-        <TouchtableTest></TouchtableTest>
+        <Touchable></Touchable>
       </View>
     );
   }
