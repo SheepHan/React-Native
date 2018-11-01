@@ -1,0 +1,9 @@
+项目V1.0版分章节源码/
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
