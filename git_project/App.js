@@ -7,8 +7,9 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View ,Image} from 'react-native';
+import { Platform, StyleSheet, Text, View, Image, Navigator } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
+import Boy from './Boy'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -19,16 +20,16 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
-  constructor(props){
+  constructor(props) {
     super(props)
-    this.state={
-      selectedTab:'home'
+    this.state = {
+      selectedTab: 'home'
     }
   }
   render() {
     return (
       <View style={styles.container}>
-        <TabNavigator>
+        {/* <TabNavigator>
           <TabNavigator.Item
             selected={this.state.selectedTab === 'tb_popular'}
             selectedTitleStyle={{color:'red'}}
@@ -66,7 +67,15 @@ export default class App extends Component<Props> {
             onPress={() => this.setState({ selectedTab: 'tb_my'})}>
             <View style={styles.page4}></View>
           </TabNavigator.Item>
-        </TabNavigator>
+        </TabNavigator> */}
+        <Navigator
+          initialRoute={{
+            component: Boy,
+          }}
+          renderScene={(route, navigator) => {
+            let Component = route.component;
+            return <Component navigator={navigator} {...route.params} />;
+          }}/>
       </View>
     );
   }
@@ -77,24 +86,27 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F5FCFF',
   },
-  page1:{
-    flex:1,
-    backgroundColor:'red'
+  page1: {
+    flex: 1,
+    backgroundColor: 'red'
   },
-  page2:{
-    flex:1,
-    backgroundColor:'yellow'
+  page2: {
+    flex: 1,
+    backgroundColor: 'yellow'
   },
-  page3:{
-    flex:1,
-    backgroundColor:'blue'
+  page3: {
+    flex: 1,
+    backgroundColor: 'blue'
   },
-  page4:{
-    flex:1,
-    backgroundColor:'green'
+  page4: {
+    flex: 1,
+    backgroundColor: 'green'
   },
-  img:{
-    width:22,
-    height:22
+  img: {
+    width: 22,
+    height: 22
   }
 });
+
+
+AppRegistry.registerComponent('git_project', () => git_project);
