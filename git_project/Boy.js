@@ -7,7 +7,7 @@ import {
     Text,
 } from 'react-native'
 import Girl from './Girl'
-import NavigationBar from './NavigationBar'
+// import NavigationBar from './NavigationBar'
 export default class Boy extends Component {
     constructor(props) {
         super(props);
@@ -17,21 +17,21 @@ export default class Boy extends Component {
     }
 
     render() {
-        // let what = this.state.what === '' ? '' : '我收到了女孩回赠的:' + this.state.what;
+        let what = this.state.what === '' ? '' : '我收到了女孩回赠的:' + this.state.what;
         return (
             <View style={styles.container}>
-                <NavigationBar
+                {/* <NavigationBar
                     title='Boy'
                     style={{ backgroundColor: '#6495ED' }}
                 >
-                 </NavigationBar>
+                 </NavigationBar> */}
                 <Text style={styles.tips}>Hello I am boy.</Text>
                 <Text style={styles.tips}
                     onPress={() => {
                         this.props.navigator.push({
                             component: Girl,
                             name: 'Girl',
-                            params: {
+                            params: { 
                                 what: '一枝玫瑰',
                                 onCallback: (what) => {
                                     this.setState({
@@ -49,7 +49,8 @@ export default class Boy extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-
+        backgroundColor:'gray',
+        justifyContent: 'center',
     },
     tips: {
         fontSize: 29

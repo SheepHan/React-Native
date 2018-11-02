@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native'
-import NavigationBar from './NavigationBar'
+// import NavigationBar from './NavigationBar'
 
 export default class Girl extends Component {
   constructor(props) {
@@ -18,12 +18,12 @@ export default class Girl extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <NavigationBar
+        {/* <NavigationBar
           title='Girl'
           style={{ backgroundColor: '#F08080' }}
           leftButton={this.renderButton(require('./res/images/ic_arrow_back_white_36pt.png'))}
           rightButton={this.renderButton(require('./res/images/ic_star.png'))}
-        />
+        /> */}
         <Text style={styles.tips}>I am girl.</Text>
         <Text style={styles.tips}>我收到了男孩送的:{this.props.what}</Text>
         <Text style={styles.tips} onPress={() => {

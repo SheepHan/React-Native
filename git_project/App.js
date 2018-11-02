@@ -7,9 +7,10 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, Image, Navigator } from 'react-native';
+import { Platform, StyleSheet, Text, View, Image} from 'react-native';
+import {Navigator} from  'react-native-deprecated-custom-components';
 import TabNavigator from 'react-native-tab-navigator';
-import Boy from './Boy'
+import Boy from './Boy';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -109,4 +110,3 @@ const styles = StyleSheet.create({
 });
 
 
-AppRegistry.registerComponent('git_project', () => git_project);
