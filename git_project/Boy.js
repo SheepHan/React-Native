@@ -26,7 +26,7 @@ export default class Boy extends Component {
                         this.props.navigator.push({
                             component: Girl,
                             name: 'Girl',
-                            params: { 
+                            params: {
                                 what: '一枝玫瑰',
                                 onCallback: (what) => {
                                     this.setState({
@@ -44,7 +44,7 @@ export default class Boy extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor:'gray',
+        backgroundColor: 'gray',
         justifyContent: 'center',
     },
     tips: {
