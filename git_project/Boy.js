@@ -7,7 +7,7 @@ import {
     Text,
 } from 'react-native'
 import Girl from './Girl'
-// import NavigationBar from './NavigationBar'
+import NavigationBar from './NavigationBar'
 export default class Boy extends Component {
     constructor(props) {
         super(props);
@@ -20,6 +20,10 @@ export default class Boy extends Component {
         let what = this.state.what === '' ? '' : '我收到了女孩回赠的:' + this.state.what;
         return (
             <View style={styles.container}>
+                <NavigationBar
+                    title='Boy'
+                    style={{ backgroundColor: '#6495ED' }}
+                />
                 <Text style={styles.tips}>Hello I am boy.</Text>
                 <Text style={styles.tips}
                     onPress={() => {
