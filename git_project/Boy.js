@@ -48,7 +48,7 @@ export default class Boy extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'gray',
+        backgroundColor: 'white',
     },
     tips: {
         fontSize: 29
