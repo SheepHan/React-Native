@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
+  Platform,
   Text,
   View
 } from 'react-native'
@@ -13,7 +14,8 @@ const STATUS_BAR_HEIGHT = 20;
 
 export default class NavigationBar extends Component {
   static propTypes = {
-    style: View.propTypes.style,
+    style: PropTypes.style,
+    // style: ViewPropTypes.style,
     title: PropTypes.string,
     titleView: PropTypes.element,
     hide: PropTypes.bool,
@@ -34,7 +36,7 @@ export default class NavigationBar extends Component {
       <Text>{this.props.title}</Text>;
 
     let content =
-      <View>
+      <View style={styles.navBar}>
         {this.props.leftButton}
         {titleView}
         {this.props.rightButton}
@@ -50,12 +52,12 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'gray',
   },
-  // navBar: {
-  //   flexDirection: 'row',
-  //   alignItems: 'center',
-  //   justifyContent: 'space-between',
-  //   height: Platform.OS === 'ios' ? NAV_BAR_HEIGHT_IOS : NAV_BAR_HEIGHT_ANDROID,
-  // },
+  navBar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    height: Platform.OS === 'ios' ? NAV_BAR_HEIGHT_IOS : NAV_BAR_HEIGHT_ANDROID,
+  },
   // navBarTitleContainer: {
   //   alignItems: 'center',
   //   justifyContent: 'center',
