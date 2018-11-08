@@ -44,6 +44,14 @@ export default class NavigationBar extends Component {
     };
   }
 
+  getButtonElement(data) {
+    return (
+      <View style={styles.navBarButton}>
+        {data ? data : null}
+      </View>
+    );
+  }
+
   render() {
     let statusBar = !this.props.statusBar.hidden ?
       <View style={styles.statusBar}>
@@ -53,13 +61,13 @@ export default class NavigationBar extends Component {
     let titleView = this.props.titleView ? this.props.titleView :
       <Text>{this.props.title}</Text>;
 
-    let content =
+    let content = this.props.hide ? null :
       <View style={styles.navBar}>
-        {this.props.leftButton}
+        {this.getButtonElement(this.props.leftButton)}
         <View style={styles.navBarTitleContainer}>
           {titleView}
         </View>
-        {this.props.rightButton}
+        {this.getButtonElement(this.props.rightButton)}
       </View>;
     return (
       <View style={styles.container}>
@@ -87,6 +95,9 @@ const styles = StyleSheet.create({
     top: 0,
     right: 40,
     bottom: 0,
+    fontSize: 20,
+    color: '#000',
+    fontWeight: 'bold'
   },
   title: {
     fontSize: 20,

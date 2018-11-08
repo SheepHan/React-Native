@@ -7,6 +7,7 @@ import {
   Image,
 } from 'react-native'
 import NavigationBar from './NavigationBar'
+
 export default class Girl extends Component {
   constructor(props) {
     super(props);
@@ -14,21 +15,21 @@ export default class Girl extends Component {
       what: ''
     }
   }
-  renderButton(image){
+  renderButton(image) {
     return <TouchableOpacity
-        style={{padding: 8}}
-        onPress={()=>{
-            this.props.navigator.pop();
-        }}>
-        <Image
-            style={{width: 26, height: 26,tintColor:'red'}}
-            source={image}/>
+      style={{ padding: 8 }}
+      onPress={() => {
+        this.props.navigator.pop();
+      }}>
+      <Image
+        style={{ width: 26, height: 26, tintColor: 'red' }}
+        source={image} />
     </TouchableOpacity>;
-}
+  }
   render() {
     return (
       <View style={styles.container}>
-        <NavigationBar 
+        <NavigationBar
           title='Girl'
           style={{ backgroundColor: '#F08080' }}
           leftButton={this.renderButton(require('./res/images/ic_arrow_back_white_36pt.png'))}
