@@ -49,7 +49,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'gray',
-        justifyContent: 'center',
     },
     tips: {
         fontSize: 29

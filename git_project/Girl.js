@@ -21,7 +21,7 @@ export default class Girl extends Component {
             this.props.navigator.pop();
         }}>
         <Image
-            style={{width: 26, height: 26,tintColor:'yellow'}}
+            style={{width: 26, height: 26,tintColor:'red'}}
             source={image}/>
     </TouchableOpacity>;
 }
