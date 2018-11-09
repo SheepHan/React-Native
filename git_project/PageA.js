@@ -6,7 +6,7 @@ import {
     StyleSheet,
     Text,
 } from 'react-native'
-import Girl from './Girl'
+import Girl from './PageB'
 // import NavigationBar from './NavigationBar'
 
 export default class Boy extends Component {
@@ -21,7 +21,7 @@ export default class Boy extends Component {
         let what = this.state.what === '' ? '' : '收到了页面B的回信:' + this.state.what;
         return (
             <View style={styles.container}>
-            
+        
                 <Text style={styles.tips}>页面A.</Text>
                 <Text style={styles.tips}
                     onPress={() => {
