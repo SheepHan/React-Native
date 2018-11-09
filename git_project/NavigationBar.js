@@ -13,7 +13,7 @@ const NAV_BAR_HEIGHT_IOS = 44;
 const NAV_BAR_HEIGHT_ANDROID = 50;
 const STATUS_BAR_HEIGHT = 20;
 const StatusBarShape = {
-  barStyle: PropTypes.oneOf(['light-content', 'default',]),
+  barStyle: PropTypes.oneOf(['light-content', 'default','dark-content']),
   hidden: PropTypes.bool,
   backgroundColor: PropTypes.string,
 };
@@ -55,11 +55,11 @@ export default class NavigationBar extends Component {
   render() {
     let statusBar = !this.props.statusBar.hidden ?
       <View style={styles.statusBar}>
-        <StatusBar {...this.props.statusBar} />
+        <StatusBar {...this.props.statusBar}/>
       </View> : null;
 
     let titleView = this.props.titleView ? this.props.titleView :
-      <Text>{this.props.title}</Text>;
+      <Text style={styles.title}>{this.props.title}</Text>;
 
     let content = this.props.hide ? null :
       <View style={styles.navBar}>
@@ -69,24 +69,34 @@ export default class NavigationBar extends Component {
         </View>
         {this.getButtonElement(this.props.rightButton)}
       </View>;
+
+
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, this.props.style]}>
         {statusBar}
         {content}
       </View>
     )
   }
 }
+
+
+
 const styles = StyleSheet.create({
+
   container: {
-    backgroundColor: 'white',
+    backgroundColor: 'orange',
   },
+
+
   navBar: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     height: Platform.OS === 'ios' ? NAV_BAR_HEIGHT_IOS : NAV_BAR_HEIGHT_ANDROID,
   },
+
+
   navBarTitleContainer: {
     alignItems: 'center',
     justifyContent: 'center',
@@ -99,15 +109,20 @@ const styles = StyleSheet.create({
     color: '#000',
     fontWeight: 'bold'
   },
+
+
   title: {
     fontSize: 20,
-    color: '#FFFFFF',
+    color: '#fff',
   },
+
+
   navBarButton: {
     alignItems: 'center',
   },
-  statusBar: {
-    height: Platform.OS === 'ios' ? STATUS_BAR_HEIGHT : 0,
 
-  },
+
+  statusBar: {
+    height: Platform.OS === 'ios' ? STATUS_BAR_HEIGHT :0,
+  }
 })

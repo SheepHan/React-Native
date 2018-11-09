@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native'
-import NavigationBar from './NavigationBar'
+// import NavigationBar from './NavigationBar'
 
 export default class Girl extends Component {
   constructor(props) {
@@ -15,33 +15,35 @@ export default class Girl extends Component {
       what: ''
     }
   }
-  renderButton(image) {
-    return <TouchableOpacity
-      style={{ padding: 8 }}
-      onPress={() => {
-        this.props.navigator.pop();
-      }}>
-      <Image
-        style={{ width: 26, height: 26, tintColor: 'red' }}
-        source={image} />
-    </TouchableOpacity>;
-  }
+
+  // renderButton(image) {
+  //   return <TouchableOpacity
+  //     style={{ padding: 8 }}
+  //     onPress={() => {
+  //       this.props.navigator.pop();
+  //     }}>
+  //     <Image
+  //       style={{ width: 26, height: 26, tintColor: 'white' }}
+  //       source={image} />
+  //   </TouchableOpacity>;
+  // }
+
   render() {
     return (
       <View style={styles.container}>
-        <NavigationBar
+        {/* <NavigationBar
           title='Girl'
-          style={{ backgroundColor: '#F08080' }}
+          // style={{ backgroundColor: '#F08080' }}
           leftButton={this.renderButton(require('./res/images/ic_arrow_back_white_36pt.png'))}
           rightButton={this.renderButton(require('./res/images/ic_star.png'))}
-        />
-        <Text style={styles.tips}>I am girl.</Text>
-        <Text style={styles.tips}>我收到了男孩送的:{this.props.what}</Text>
+        /> */}
+        <Text style={styles.tips}>页面B.</Text>
+        <Text style={styles.tips}>我收到了页面A的信息:{this.props.what}</Text>
         <Text style={styles.tips} onPress={() => {
-          this.props.onCallback('巧克力');
+          this.props.onCallback('邮件信息toA');
           this.props.navigator.pop();
         }}>
-          回赠,男孩巧克力
+          回信，给页面A回信
                 </Text>
       </View>
     )
@@ -51,7 +53,7 @@ export default class Girl extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white'
+    backgroundColor: 'orange'
   },
   tips: {
     fontSize: 18
