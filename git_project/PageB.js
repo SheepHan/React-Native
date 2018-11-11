@@ -8,7 +8,7 @@ import {
 } from 'react-native'
 import PageC from './PageC'
 import PageA from './PageA'
-// import NavigationBar from './NavigationBar'
+import NavigationBar from './NavigationBar'
 
 export default class Girl extends Component {
   constructor(props) {
@@ -18,29 +18,28 @@ export default class Girl extends Component {
     }
   }
 
-  // renderButton(image) {
-  //   return <TouchableOpacity
-  //     style={{ padding: 8 }}
-  //     onPress={() => {
-  //       this.props.navigator.pop();
-  //     }}>
-  //     <Image
-  //       style={{ width: 26, height: 26, tintColor: 'white' }}
-  //       source={image} />
-  //   </TouchableOpacity>;
-  // }
+  renderButton(image) {
+    return <TouchableOpacity
+      style={{ padding: 8 }}
+      onPress={() => {
+        this.props.navigator.pop();
+      }}>
+      <Image
+        style={{ width: 26, height: 26, tintColor: 'white' }}
+        source={image} />
+    </TouchableOpacity>;
+  }
 
   render() {
     let what = this.state.what === '' ? '' : '收到了C的来信：' + this.state.what
     return (
-
       <View style={styles.container}>
-        {/* <NavigationBar
-          title='Girl'
-          // style={{ backgroundColor: '#F08080' }}
+        <NavigationBar
+          title='PageB'
+          statusBar={{ backgroundColor: '#000' }}
           leftButton={this.renderButton(require('./res/images/ic_arrow_back_white_36pt.png'))}
           rightButton={this.renderButton(require('./res/images/ic_star.png'))}
-        /> */}
+        />
         <Text style={styles.tips}>页面B.</Text>
         <Text style={styles.tips}>我收到了页面A的信息:{this.props.what}</Text>
         <Text style={styles.tips} onPress={() => {

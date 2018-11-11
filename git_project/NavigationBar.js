@@ -11,7 +11,9 @@ import PropTypes from 'prop-types'
 
 const NAV_BAR_HEIGHT_IOS = 44;
 const NAV_BAR_HEIGHT_ANDROID = 50;
+
 const STATUS_BAR_HEIGHT = 20;
+
 const StatusBarShape = {
   barStyle: PropTypes.oneOf(['light-content', 'default','dark-content']),
   hidden: PropTypes.bool,
@@ -31,7 +33,7 @@ export default class NavigationBar extends Component {
   }
   static defaultProps = {
     statusBar: {
-      barStyle: 'light-content',
+      barStyle: 'dark-content',
       hidden: false,
     },
   }
@@ -85,7 +87,7 @@ export default class NavigationBar extends Component {
 const styles = StyleSheet.create({
 
   container: {
-    backgroundColor: 'orange',
+    backgroundColor: 'red',
   },
 
 
