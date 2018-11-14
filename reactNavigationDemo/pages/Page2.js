@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
   AppRegistry,
   StyleSheet,
@@ -20,24 +20,17 @@ import {
 
 
 type Props = {};
-export default class HomePage extends Component<Props> {
+export default class Page2 extends Component<Props> {
   render() {
     const {navigation} = this.props
-    return (
+    return (  
       <View style={styles.container}>
-        <Text>欢迎</Text>
+        <Text>欢迎来到 Page2</Text>
         <Button
-          title="Go Page1"
-          onPress={() => {
-            navigation.navigate('Page1')
-          }}
-        />
-        <Button
-          title="Go Page2"
-          onPress={() => {
-            navigation.navigate('Page2')
-          }}
-        />
+          title="Go Back"
+          onPress={()=>{
+            navigation.goBack()
+          }}/>
       </View>
     );
   }
