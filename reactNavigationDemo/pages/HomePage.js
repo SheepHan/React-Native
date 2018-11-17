@@ -25,14 +25,14 @@ export default class HomePage extends Component<Props> {
     title: "Home"
   }
   render() {
-    const {navigation} = this.props
+    const { navigation } = this.props
     return (
       <View style={styles.container}>
         <Text>欢迎</Text>
         <Button
           title="Go Page1"
           onPress={() => {
-            navigation.navigate('Page1',{name:'动态的'})
+            navigation.navigate('Page1', { name: '动态的' })
           }}
         />
         <Button

@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
@@ -17,7 +17,7 @@ import {
   Platform
 } from 'react-native';
 
-import {AppStackNavigator} from './navigators/AppNavigators'
+import { AppStackNavigator } from './navigators/AppNavigators'
 
 
 
