@@ -41,6 +41,12 @@ export default class HomePage extends Component<Props> {
             navigation.navigate('Page2')
           }}
         />
+        <Button
+          title="Go Page3"
+          onPress={() => {
+            navigation.navigate('Page3',{title:''})
+          }}
+        />
       </View>
     );
   }
