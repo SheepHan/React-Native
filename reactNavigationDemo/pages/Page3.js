@@ -23,10 +23,10 @@ import {
 type Props = {};
 export default class Page3 extends Component<Props> {
   render() {
-    const {navigation} = this.props
-    const { state, setParams } = navigation;
-    const { params } = state;
-    const showText=params.mode==='edit'?'正在编辑':'编辑完成'
+    // const {navigation} = this.props
+    // const { state, setParams } = navigation;
+    // const { params } = state;
+    // const showText=params.mode==='edit'?'正在编辑':'编辑完成'
     return (  
       <View style={styles.container}>
         <Text>欢迎来到 Page3</Text>
@@ -35,12 +35,12 @@ export default class Page3 extends Component<Props> {
           onPress={()=>{
             navigation.goBack()
           }}/>
-          <Text>{showText}</Text>
-          <TextInput style={styles.input}
+          {/* <Text>{showText}</Text> */}
+          {/* <TextInput style={styles.input}
           onChangeText={text=>{
             setParams({title:text})
           }}
-          />
+          /> */}
       </View>
     );
   }

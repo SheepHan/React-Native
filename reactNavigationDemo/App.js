@@ -23,7 +23,7 @@ import { AppStackNavigator, AppTabNavigator } from './navigators/AppNavigators'
 
 type Props = {};
 export default AppTabNavigator;
-export default AppStackNavigator;
+
 
  
 const styles = StyleSheet.create({

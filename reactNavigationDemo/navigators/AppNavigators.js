@@ -69,23 +69,29 @@ export const AppStackNavigator = StackNavigator({
   },
   Page3: {
     screen: Page3,
-    navigationOptions: (props) => {
-      const { navigation } = props;
-      const { state, setParams } = navigation;
-      const { params } = state;
-      return {
-        title: params.title ? params.title : 'This is Page3',
-        headerRight: (
-          <Button
-            title={params.mode === 'edit' ? '保存' : '编辑'}
-            onPress={() => {
-              setParams({ mode: params.mode === 'edit' ? "" : 'edit' })
-            }}
-          />
-        )
-      }
+    navigationOptions: {
+      title: "Page3"
     }
-  }
+  },
+  // Page3: {
+  //   screen: Page3,
+  //   navigationOptions: (props) => {
+  //     const { navigation } = props;
+  //     const { state, setParams } = navigation;
+  //     const { params } = state;
+  //     return {
+  //       title: params.title ? params.title : 'This is Page3',
+  //       headerRight: (
+  //         <Button
+  //           title={params.mode === 'edit' ? '保存' : '编辑'}
+  //           onPress={() => {
+  //             setParams({ mode: params.mode === 'edit' ? "" : 'edit' })
+  //           }}
+  //         />
+  //       )
+  //     }
+  //   }
+  // }
 }, {
     navigationOptions: { // 禁用导航栏
       // header: null
