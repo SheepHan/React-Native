@@ -23,7 +23,7 @@ import {
 type Props = {};
 export default class Page3 extends Component<Props> {
   render() {
-    // const {navigation} = this.props
+    const {navigation} = this.props
     // const { state, setParams } = navigation;
     // const { params } = state;
     // const showText=params.mode==='edit'?'正在编辑':'编辑完成'

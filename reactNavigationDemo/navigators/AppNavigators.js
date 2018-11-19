@@ -1,20 +1,20 @@
-import { StackNavigator, TabNavigator } from 'react-navigation'
+import { StackNavigator,  createBottomTabNavigator  } from 'react-navigation'
 import HomePage from '../pages/HomePage'
 import Page1 from '../pages/Page1'
 import Page2 from '../pages/Page2'
 import Page3 from '../pages/Page3'
 import React from 'react'
 import { Button } from 'react-native'
-import Ionicons from 'react-native-vector-icons/Ionicons'
+import Icon from 'react-native-vector-icons/Ionicons'
 
-export const AppTabNavigator = TabNavigator({
+export const AppTabNavigator = createBottomTabNavigator({
   Page1: {
     screen: Page1,
     navigationOptions: {
       tabBarLabel: 'Page1',
       tabBarIcon: ({ tintColor, focused }) => (
-        <Ionicons
-          name={focused ? 'ios-home' : 'ios-home-outline'}
+        <Icon 
+          name={focused ? 'md-home' : 'md-home-outline'}
           size={26}
           style={{ color: tintColor }}
         />
@@ -26,8 +26,8 @@ export const AppTabNavigator = TabNavigator({
     navigationOptions: {
       tabBarLabel: 'Page2',
       tabBarIcon: ({ tintColor, focused }) => (
-        <Ionicons
-          name={focused ? 'ios-people' : 'ios-people-outline'}
+        <Icon 
+          name={focused ? 'md-people' : 'md-people-outline'}
           size={26}
           style={{ color: tintColor }}
         />
@@ -39,8 +39,8 @@ export const AppTabNavigator = TabNavigator({
     navigationOptions: {
       tabBarLabel: 'Page3',
       tabBarIcon: ({ tintColor, focused }) => (
-        <Ionicons
-          name={focused ? 'ios-chatboxes' : 'ios-chatboxes-outline'}
+        <Icon 
+          name={focused ? 'md-add' : 'md-add-outline'}
           size={26}
           style={{ color: tintColor }}
         />
