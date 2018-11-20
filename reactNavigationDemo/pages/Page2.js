@@ -31,6 +31,16 @@ export default class Page2 extends Component<Props> {
           onPress={()=>{
             navigation.goBack()
           }}/>
+            <Button
+          title="改变主题"
+          onPress={()=>{
+            navigation.setParams({
+              theme:{
+                tintColor:'red',
+                updateTime:new Date().getTime()
+              }
+            })
+          }}/>
       </View>
     );
   }
@@ -41,7 +51,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'pink',
   },
   welcome: {
     fontSize: 20,

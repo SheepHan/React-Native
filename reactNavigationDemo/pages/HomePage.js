@@ -21,9 +21,9 @@ import {
 
 type Props = {};
 export default class HomePage extends Component<Props> {
-  static navigationOptions = {
-    title: "Home"
-  }
+  // static navigationOptions = {
+  //   title: "Home"
+  // }
   render() {
     const { navigation } = this.props
     return (
@@ -45,6 +45,12 @@ export default class HomePage extends Component<Props> {
           title="Go Page3"
           onPress={() => {
             navigation.navigate('Page3',{title:''})
+          }}
+        />
+        <Button
+          title="Go TabNav"
+          onPress={() => {
+            navigation.navigate('TabNav',{title:''})
           }}
         />
       </View>

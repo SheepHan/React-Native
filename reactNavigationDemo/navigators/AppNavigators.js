@@ -1,4 +1,4 @@
-import { StackNavigator,  createBottomTabNavigator  } from 'react-navigation'
+import { StackNavigator,  createBottomTabNavigator ,TabBarBottom } from 'react-navigation'
 import HomePage from '../pages/HomePage'
 import Page1 from '../pages/Page1'
 import Page2 from '../pages/Page2'
@@ -7,6 +7,29 @@ import React from 'react'
 import { Button } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 
+// TabBarComponent 组件,隶属于TabNavigator这个层次的，但是从React的Component中引入
+class TabBarComponent extends React.Component{
+  constructor(props){
+    super(props);
+    this.theme={
+      tintColor:props.activeTintcolor,
+      updateTime:new Date().getTime()
+    };
+  }
+  render () {
+    const {routes,index}=this.props.navigationState;
+    const {theme}=routes[index].params;
+    if (theme && theme.updateTime > this.theme.updateTime){
+      this.theme=theme;
+    }
+    return <TabBarBottom
+      {...this.props}
+      activeTintColor={this.theme.tintColor||this.props.activeTintColor}
+    />
+  }
+}
+
+// TabNavigator 组件
 export const AppTabNavigator = createBottomTabNavigator({
   Page1: {
     screen: Page1,
@@ -46,8 +69,15 @@ export const AppTabNavigator = createBottomTabNavigator({
         />
       )
     }
-  }
+  },
+},
+{
+  tabBarComponent:TabBarComponent
 });
+
+
+
+// StackNavigator 组件
 export const AppStackNavigator = StackNavigator({
   HomePage: {
     screen: HomePage,
@@ -69,29 +99,29 @@ export const AppStackNavigator = StackNavigator({
   },
   Page3: {
     screen: Page3,
-    navigationOptions: {
-      title: "Page3"
+    navigationOptions: (props) => {
+      const { navigation } = props;
+      const { state, setParams } = navigation;
+      const { params } = state;
+      return {
+        title: params.title ? params.title : 'This is Page3',
+        headerRight: (
+          <Button
+            title={params.mode === 'edit' ? '保存' : '编辑'}
+            onPress={() => {
+              setParams({ mode: params.mode === 'edit' ? "" : 'edit' })
+            }}
+          />
+        )
+      }
     }
   },
-  // Page3: {
-  //   screen: Page3,
-  //   navigationOptions: (props) => {
-  //     const { navigation } = props;
-  //     const { state, setParams } = navigation;
-  //     const { params } = state;
-  //     return {
-  //       title: params.title ? params.title : 'This is Page3',
-  //       headerRight: (
-  //         <Button
-  //           title={params.mode === 'edit' ? '保存' : '编辑'}
-  //           onPress={() => {
-  //             setParams({ mode: params.mode === 'edit' ? "" : 'edit' })
-  //           }}
-  //         />
-  //       )
-  //     }
-  //   }
-  // }
+  TabNav:{
+    screen:AppTabNavigator,
+    navigationOptions: {
+      title: "This is TabNavigator的导航页"
+    }
+  }
 }, {
     navigationOptions: { // 禁用导航栏
       // header: null
