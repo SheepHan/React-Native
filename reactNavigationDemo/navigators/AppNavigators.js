@@ -1,4 +1,4 @@
-import { StackNavigator,  createBottomTabNavigator ,TabBarBottom } from 'react-navigation'
+import { StackNavigator, createBottomTabNavigator, TabBarBottom } from 'react-navigation'
 import HomePage from '../pages/HomePage'
 import Page1 from '../pages/Page1'
 import Page2 from '../pages/Page2'
@@ -8,26 +8,27 @@ import { Button } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 
 // TabBarComponent 组件,隶属于TabNavigator这个层次的，但是从React的Component中引入
-class TabBarComponent extends React.Component{
-  constructor(props){
-    super(props);
-    this.theme={
-      tintColor:props.activeTintcolor,
-      updateTime:new Date().getTime()
-    };
-  }
-  render () {
-    const {routes,index}=this.props.navigationState;
-    const {theme}=routes[index].params;
-    if (theme && theme.updateTime > this.theme.updateTime){
-      this.theme=theme;
-    }
-    return <TabBarBottom
-      {...this.props}
-      activeTintColor={this.theme.tintColor||this.props.activeTintColor}
-    />
-  }
-}
+// class TabBarComponent extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.theme = {
+//       tintColor: props.activeTintcolor,
+//       updateTime: new Date().getTime()
+//     };
+//   }
+//   render() {
+//     const { routes, index } = this.props.navigationState;
+//     const { theme } = routes[index].params;
+//     if (theme && theme.updateTime > this.theme.updateTime) {
+//       this.theme = theme;
+//     }
+//     return (<TabBarBottom
+//       {...this.props}
+//       activeTintColor={this.theme.tintColor || this.props.activeTintColor}
+//     />
+//     );
+//   }
+// }
 
 // TabNavigator 组件
 export const AppTabNavigator = createBottomTabNavigator({
@@ -36,7 +37,7 @@ export const AppTabNavigator = createBottomTabNavigator({
     navigationOptions: {
       tabBarLabel: 'Page1',
       tabBarIcon: ({ tintColor, focused }) => (
-        <Icon 
+        <Icon
           name={focused ? 'md-home' : 'md-home-outline'}
           size={26}
           style={{ color: tintColor }}
@@ -49,7 +50,7 @@ export const AppTabNavigator = createBottomTabNavigator({
     navigationOptions: {
       tabBarLabel: 'Page2',
       tabBarIcon: ({ tintColor, focused }) => (
-        <Icon 
+        <Icon
           name={focused ? 'md-people' : 'md-people-outline'}
           size={26}
           style={{ color: tintColor }}
@@ -62,7 +63,7 @@ export const AppTabNavigator = createBottomTabNavigator({
     navigationOptions: {
       tabBarLabel: 'Page3',
       tabBarIcon: ({ tintColor, focused }) => (
-        <Icon 
+        <Icon
           name={focused ? 'md-add' : 'md-add-outline'}
           size={26}
           style={{ color: tintColor }}
@@ -71,9 +72,10 @@ export const AppTabNavigator = createBottomTabNavigator({
     }
   },
 },
-{
-  tabBarComponent:TabBarComponent
-});
+  // {
+  //   tabBarComponent: TabBarComponent
+  // }
+  );
 
 
 
@@ -116,8 +118,8 @@ export const AppStackNavigator = StackNavigator({
       }
     }
   },
-  TabNav:{
-    screen:AppTabNavigator,
+  TabNav: {
+    screen: AppTabNavigator,
     navigationOptions: {
       title: "This is TabNavigator的导航页"
     }

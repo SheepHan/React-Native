@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
@@ -22,25 +22,25 @@ import {
 type Props = {};
 export default class Page2 extends Component<Props> {
   render() {
-    const {navigation} = this.props
-    return (  
+    const { navigation } = this.props
+    return (
       <View style={styles.container}>
         <Text>欢迎来到 Page2</Text>
         <Button
           title="Go Back"
-          onPress={()=>{
+          onPress={() => {
             navigation.goBack()
-          }}/>
-            <Button
+          }} />
+        {/* <Button
           title="改变主题"
-          onPress={()=>{
+          onPress={() => {
             navigation.setParams({
-              theme:{
-                tintColor:'red',
-                updateTime:new Date().getTime()
+              theme: {
+                tintColor: 'red',
+                updateTime: new Date().getTime()
               }
             })
-          }}/>
+          }} /> */}
       </View>
     );
   }
