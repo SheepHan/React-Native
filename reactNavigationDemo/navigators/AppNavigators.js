@@ -72,9 +72,9 @@ export const AppTabNavigator = createBottomTabNavigator({
     }
   },
 },
-  {
-    tabBarComponent: TabBarComponent
-  }
+  // {
+  //   tabBarComponent: TabBarComponent
+  // }
   );
 
 
