@@ -1,11 +1,14 @@
-import { StackNavigator, createBottomTabNavigator, TabBarBottom } from 'react-navigation'
+import { StackNavigator, createBottomTabNavigator, TabBarBottom, DrawerNavigator, SafeAreaView, DrawerItems } from 'react-navigation'
 import HomePage from '../pages/HomePage'
 import Page1 from '../pages/Page1'
 import Page2 from '../pages/Page2'
 import Page3 from '../pages/Page3'
+import Page4 from '../pages/Page4'
+import Page5 from '../pages/Page5'
 import React from 'react'
-import { Button } from 'react-native'
+import { Button, ScrollView } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 
 // TabBarComponent 组件,隶属于TabNavigator这个层次的，但是从React的Component中引入
 // class TabBarComponent extends React.Component {
@@ -29,6 +32,55 @@ import Icon from 'react-native-vector-icons/Ionicons'
 //     );
 //   }
 // }
+
+
+//DrawerNavigator 组件
+export const DrawerNav = DrawerNavigator({
+  Page4: {
+    screen: Page4,
+    navigationOptions: {
+      drawerLabel: 'Page4',
+      drawerIcon: ({ tintColor }) => (
+        <MaterialIcons
+          name={'drafts'}
+          size={24}
+          style={{ color: tintColor }}
+        />
+      )
+    }
+  },
+  Page5: {
+    screen: Page5,
+    navigationOptions: {
+      drawerLabel: 'Page5',
+      drawerIcon: ({ tintColor }) => (
+        <MaterialIcons
+          name={'drafts'}
+          size={24}
+          style={{ color: tintColor }}
+        />
+      )
+    }
+  }
+}, {
+    initialRouteName: 'Page5',
+    contentOptions: {
+      activeTintColor: '#ela35e'
+    },
+    swipeEnabled: true,
+    animationEnabled: true,
+    lazy: false,
+    tabBarPosition: 'bottom',
+  }, {
+    contentComponent: (props) => (
+      <ScrollView style={{ backgroundColor: '#987666', flex: 1 }}>
+        <SafeAreaView forceInset={{ top: 'always', horizontal: 'never' }}>
+          <DrawerItems {...props} />
+        </SafeAreaView>
+      </ScrollView>
+    )
+  })
+
 
 // TabNavigator 组件
 export const AppTabNavigator = createBottomTabNavigator({
@@ -75,7 +127,7 @@ export const AppTabNavigator = createBottomTabNavigator({
   // {
   //   tabBarComponent: TabBarComponent
   // }
-  );
+);
 
 
 
@@ -122,6 +174,12 @@ export const AppStackNavigator = StackNavigator({
     screen: AppTabNavigator,
     navigationOptions: {
       title: "This is TabNavigator的导航页"
+    }
+  },
+  DrawerNav: {
+    screen: DrawerNav,
+    navigationOptions: {
+      title: "This is DrawerNav"
     }
   }
 }, {

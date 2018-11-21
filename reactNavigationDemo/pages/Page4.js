@@ -20,45 +20,32 @@ import {
 
 
 type Props = {};
-export default class HomePage extends Component<Props> {
-  // static navigationOptions = {
-  //   title: "Home"
-  // }
+export default class Page4 extends Component<Props> {
   render() {
     const { navigation } = this.props
     return (
       <View style={styles.container}>
-        <Text>欢迎</Text>
+        <Text>欢迎来到 Page4</Text>
         <Button
-          title="Go Page1"
+          title="Open Drawer"
           onPress={() => {
-            navigation.navigate('Page1', { name: '动态的' })
-          }}
-        />
+            navigation.openDrawer()
+          }} />
         <Button
-          title="Go Page2"
+          title="Toggle Drawer"
           onPress={() => {
-            navigation.navigate('Page2')
-          }}
-        />
+            navigation.toggleDrawer()
+          }} />
+           <Button
+          title="Close Drawer"
+          onPress={() => {
+            navigation.closeDrawer()
+          }} />
         <Button
-          title="Go Page3"
+          title="Go to Page5"
           onPress={() => {
-            navigation.navigate('Page3',{title:''})
-          }}
-        />
-        <Button
-          title="Go TabNav"
-          onPress={() => {
-            navigation.navigate('TabNav',{title:''})
-          }}
-        />
-        <Button
-          title="Go to DrawerNavigator"
-          onPress={() => {
-            navigation.navigate('DrawerNav',{title:'DrawerNav'})
-          }}
-        />
+            navigation.navigate('Page5')
+          }} />
       </View>
     );
   }
@@ -69,7 +56,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'red',
   },
   welcome: {
     fontSize: 20,
