@@ -39,7 +39,7 @@ export default class Page5 extends Component<Props> {
         <Button
           title="Go to Page5"
           onPress={() => {
-            navigation.navigate('Page4')
+            navigation.navigate('Page4')                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
           }} />
       </View>
     );
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   },
   welcome: {
     fontSize: 20,
-    textAlign: 'center',
+    
     margin: 10,
   },
   instructions: {
