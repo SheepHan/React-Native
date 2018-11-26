@@ -46,7 +46,7 @@ export default class Page5 extends Component<Props> {
   }
 }
 
-// const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
