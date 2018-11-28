@@ -36,12 +36,12 @@ export default class Page5 extends Component<Props> {
           onPress={() => {
             navigation.closeDrawer()
           }} />
-        {/* <Button
+        <Button
           title="Go to Page5"
           onPress={() => {
             navigation.navigate('Page4')                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
           }} />
-      </View> */}
+      </View>
     );
   }
 }
