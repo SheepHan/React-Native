@@ -27,20 +27,20 @@ export default class Page5 extends Component<Props> {
       <View style={styles.container}>
         <Text>欢迎来到 Page5</Text>
         <Button
-          title="Toggle Drawer"
-          onPress={() => {
-            navigation.toggleDrawer()
-          }} />
-           <Button
-          title="Close Drawer"
-          onPress={() => {
-            navigation.closeDrawer()
-          }} />
-        <Button
-          title="Go to Page5"
-          onPress={() => {
-            navigation.navigate('Page4')                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-          }} />
+        //   title="Toggle Drawer"
+        //   onPress={() => {
+        //     navigation.toggleDrawer()
+        //   }} />
+        //    <Button
+        //   title="Close Drawer"
+        //   onPress={() => {
+        //     navigation.closeDrawer()
+        //   }} />
+        // <Button
+        //   title="Go to Page5"
+        //   onPress={() => {
+        //     navigation.navigate('Page4')                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+        //   }} />
       </View>
     );
   }
