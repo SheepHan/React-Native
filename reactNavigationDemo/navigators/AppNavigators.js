@@ -63,7 +63,7 @@ export const DrawerNav = DrawerNavigator({
     }
   }
 }, {
-    initialRouteName: 'Page5',
+    initialRouteName: 'Page4',
     contentOptions: {
       activeTintColor: '#ela35e'
     },
