@@ -21,6 +21,6 @@ const AppRoot = createStackNavigator({
 })
 
 
-// const AppContainer = createAppContainer(AppRoot);
+const AppContainer = createAppContainer(AppRoot);
 
-// AppRegistry.registerComponent(appName, () => AppContainer);
+AppRegistry.registerComponent(appName, () => AppContainer);
