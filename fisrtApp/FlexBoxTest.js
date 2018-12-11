@@ -25,9 +25,9 @@ export default class FlexBox extends Component{
         <View style={ {width:100,height:100,backgroundColor:"darkcyan",margin:5}}>
           <Text style={ {fontSize:16}}>3</Text>
         </View>
-        {/* <View style={ {width:100,height:100,backgroundColor:"darkcyan",margin:5}}>
+        <View style={ {width:100,height:100,backgroundColor:"darkcyan",margin:5}}>
           <Text style={ {fontSize:16}}>4</Text>
-        </View> */}
+        </View>
       </View>
     </View>
   }
