@@ -32,7 +32,7 @@ export default class FlexBox extends Component{
     </View>
   }
 }
-wo s 
+///
 
 
 const styles = StyleSheet.create({
