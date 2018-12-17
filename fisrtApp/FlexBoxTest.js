@@ -12,26 +12,26 @@ import {StyleSheet, Text, Image, View} from 'react-native';
 
 
 
-// export default class FlexBox extends Component{
-//   render() {
-//     return <View>
-//       <View style={ {flexDirection:'row',backgroundColor:"darkgray",marginTop:20,flexWrap:'wrap'}}>
-//         <View style={ {width:100,height:100,backgroundColor:"darkcyan",margin:5}}>
-//           <Text style={ {fontSize:16}}>1</Text>
-//         </View>
-//         <View style={ {width:100,height:100,backgroundColor:"darkcyan",margin:5}}>
-//           <Text style={ {fontSize:16}}>2</Text>
-//         </View>
-//         <View style={ {width:100,height:100,backgroundColor:"darkcyan",margin:5}}>
-//           <Text style={ {fontSize:16}}>3</Text>
-//         </View>
-//         <View style={ {width:100,height:100,backgroundColor:"darkcyan",margin:5}}>
-//           <Text style={ {fontSize:16}}>4</Text>
-//         </View>
-//       </View>
-//     </View>
-//   }
-// }
+export default class FlexBox extends Component{
+  render() {
+    return <View>
+      <View style={ {flexDirection:'row',backgroundColor:"darkgray",marginTop:20,flexWrap:'wrap'}}>
+        <View style={ {width:100,height:100,backgroundColor:"darkcyan",margin:5}}>
+          <Text style={ {fontSize:16}}>1</Text>
+        </View>
+        <View style={ {width:100,height:100,backgroundColor:"darkcyan",margin:5}}>
+          <Text style={ {fontSize:16}}>2</Text>
+        </View>
+        <View style={ {width:100,height:100,backgroundColor:"darkcyan",margin:5}}>
+          <Text style={ {fontSize:16}}>3</Text>
+        </View>
+        <View style={ {width:100,height:100,backgroundColor:"darkcyan",margin:5}}>
+          <Text style={ {fontSize:16}}>4</Text>
+        </View>
+      </View>
+    </View>
+  }
+}
 
 
 
